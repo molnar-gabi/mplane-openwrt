@@ -1,0 +1,3 @@
+PYTHON_VERSION:=3.4
+
+MPLANE_PKG_DIR:=/usr/lib/python$(PYTHON_VERSION)/mplane

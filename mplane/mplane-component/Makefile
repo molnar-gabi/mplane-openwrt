@@ -18,6 +18,7 @@ PKG_SOURCE:=$(PKG_NAME).tar.gz
 PKG_BUILD_DEPENDS:=mplane-common
 
 include $(INCLUDE_DIR)/package.mk
+include $(TOPDIR)/feeds/mplane/mplane/mplane-common/files/mplane-common.mk
 $(call include_mk, python3-package.mk)
 
 define Package/mplane-component
@@ -42,11 +43,11 @@ define Build/InstallDev
 endef
 
 define Package/mplane-component/install
-	$(INSTALL_DIR) $(1)/usr/lib/python3.4/mplane
+	$(INSTALL_DIR) $(1)$(MPLANE_PKG_DIR)
 
-	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ott.py $(1)/usr/lib/python3.4/mplane/
-	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ping.py $(1)/usr/lib/python3.4/mplane/
-	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ping_ci.py $(1)/usr/lib/python3.4/mplane/
+	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ott.py $(1)$(MPLANE_PKG_DIR)/
+	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ping.py $(1)$(MPLANE_PKG_DIR)/
+	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/ping_ci.py $(1)$(MPLANE_PKG_DIR)/
 endef
 
 $(eval $(call BuildPackage,mplane-component))
