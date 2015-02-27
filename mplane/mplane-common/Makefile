@@ -48,6 +48,7 @@ define Package/mplane-common/install
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/sec.py $(1)$(MPLANE_PKG_DIR)/
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/sv_handlers.py $(1)$(MPLANE_PKG_DIR)/
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/registry.json $(1)$(MPLANE_PKG_DIR)/
+	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/httpsrv.py $(1)$(MPLANE_PKG_DIR)/
 endef
 
 $(eval $(call BuildPackage,mplane-common))
