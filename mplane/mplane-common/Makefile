@@ -26,7 +26,7 @@ define Package/mplane-common
   CATEGORY:=mPlane
   TITLE:=common library used by various mPlane protocol compatible instances
   URL:=https://www.ict-mplane.eu/public/public-deliverables
-  DEPENDS:=+python3 +python3-yaml +python3-tornado +python3-ssl
+  DEPENDS:=+python3 +python3-yaml +python3-tornado +python3-ssl +python3-urllib
   MAINTAINER:=Gabor Molnar <gabor.molnar@netvisor.hu>
 endef
 
@@ -49,6 +49,7 @@ define Package/mplane-common/install
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/sv_handlers.py $(1)$(MPLANE_PKG_DIR)/
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/registry.json $(1)$(MPLANE_PKG_DIR)/
 	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/httpsrv.py $(1)$(MPLANE_PKG_DIR)/
+	$(CP) $(PKG_BUILD_DIR)/../mplane/mplane/scheduler.py $(1)$(MPLANE_PKG_DIR)/
 endef
 
 $(eval $(call BuildPackage,mplane-common))
