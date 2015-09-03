@@ -26,7 +26,7 @@ define Package/mplane-component
   CATEGORY:=mPlane
   TITLE:=component instance implementing mPlane protocol
   URL:=https://www.ict-mplane.eu/public/public-deliverables
-  DEPENDS:=+mplane-common +probe-meas-ott
+  DEPENDS:=+mplane-common
   MAINTAINER:=Gabor Molnar <gabor.molnar@netvisor.hu>
 endef
 
